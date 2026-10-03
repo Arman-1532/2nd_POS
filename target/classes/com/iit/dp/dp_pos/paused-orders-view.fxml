@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.iit.dp.dp_pos.controller.PausedOrdersController"
+      spacing="20.0" style="-fx-background-color: linear-gradient(to bottom right, #f5f7fa, #c3cfe2); -fx-padding: 30;">
+
+    <!-- Header Section -->
+    <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 15px; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10,0,0,2);">
+        <Button fx:id="backButton" text="← Back" onAction="#goBack"
+                style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-background-radius: 8px; -fx-padding: 8 18; -fx-font-weight: bold;" />
+        <Label text="📋 Paused Orders" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1976d2;" />
+    </HBox>
+
+    <!-- Main Content -->
+    <VBox spacing="15" style="-fx-background-color: rgba(255,255,255,0.97); -fx-background-radius: 15px; -fx-padding: 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 8,0,0,2);">
+        <TableView fx:id="pausedOrdersTable" VBox.vgrow="ALWAYS">
+            <placeholder>
+                <Label text="No paused orders available" style="-fx-font-size: 16px; -fx-text-fill: #999;" />
+            </placeholder>
+        </TableView>
+    </VBox>
+</VBox>

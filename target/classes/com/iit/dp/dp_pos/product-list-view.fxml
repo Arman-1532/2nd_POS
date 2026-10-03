@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.iit.dp.dp_pos.controller.ProductListController" 
+      spacing="20.0" style="-fx-background-color: linear-gradient(to bottom right, #f5f7fa, #c3cfe2); -fx-padding: 30;">
+    
+    <!-- Header Section -->
+    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 15px; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10,0,0,2);">
+        <Label text="📦 Product Inventory" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1976d2;" />
+        <Label text="Manage and view all products in your inventory" style="-fx-font-size: 14px; -fx-text-fill: #666;" />
+    </VBox>
+    
+    <!-- Search and Filter Section -->
+    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 10px; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5,0,0,1);">
+        <Label text="🔍" style="-fx-font-size: 18px;" />
+        <TextField fx:id="searchField" promptText="Search products by name..." prefWidth="300" 
+                   style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #ddd; -fx-background-color: white; -fx-padding: 8 12;" />
+        <ComboBox fx:id="filterComboBox" promptText="Filter by stock" prefWidth="150"
+                  style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #ddd;" />
+    </HBox>
+    
+    <!-- Statistics Cards -->
+    <HBox spacing="20" alignment="CENTER">
+        <VBox alignment="CENTER" style="-fx-background-color: rgba(76, 175, 80, 0.1); -fx-background-radius: 10px; -fx-padding: 15; -fx-min-width: 120; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3,0,0,1);">
+            <Label fx:id="totalProductsLabel" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #4CAF50;" />
+            <Label text="Total Products" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+        </VBox>
+        <VBox alignment="CENTER" style="-fx-background-color: rgba(255, 193, 7, 0.1); -fx-background-radius: 10px; -fx-padding: 15; -fx-min-width: 120; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3,0,0,1);">
+            <Label fx:id="lowStockLabel" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FFC107;" />
+            <Label text="Low Stock" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+        </VBox>
+        <VBox alignment="CENTER" style="-fx-background-color: rgba(244, 67, 54, 0.1); -fx-background-radius: 10px; -fx-padding: 15; -fx-min-width: 120; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3,0,0,1);">
+            <Label fx:id="outOfStockLabel" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #F44336;" />
+            <Label text="Out of Stock" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+        </VBox>
+    </HBox>
+    
+    <!-- Product Table -->
+    <VBox style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 15px; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10,0,0,2);" VBox.vgrow="ALWAYS">
+        <TableView fx:id="productTable" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+            <placeholder>
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="📦" style="-fx-font-size: 48px;" />
+                    <Label text="No products found" style="-fx-font-size: 16px; -fx-text-fill: #999;" />
+                    <Label text="Try adjusting your search or filters" style="-fx-font-size: 12px; -fx-text-fill: #ccc;" />
+                </VBox>
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="80"
+                             style="-fx-background-color: #f8f9fa; -fx-font-weight: bold;" />
+                <TableColumn fx:id="nameColumn" text="Product Name" prefWidth="200"
+                             style="-fx-background-color: #f8f9fa; -fx-font-weight: bold;" />
+                <TableColumn fx:id="categoryColumn" text="Category" prefWidth="120"
+                             style="-fx-background-color: #f8f9fa; -fx-font-weight: bold;" />
+                <TableColumn fx:id="quantityColumn" text="Stock Level" prefWidth="130"
+                             style="-fx-background-color: #f8f9fa; -fx-font-weight: bold;" />
+                <TableColumn fx:id="priceColumn" text="Price" prefWidth="120" 
+                             style="-fx-background-color: #f8f9fa; -fx-font-weight: bold;" />
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="120" 
+                             style="-fx-background-color: #f8f9fa; -fx-font-weight: bold;" />
+                <TableColumn fx:id="actionColumn" text="Actions" prefWidth="180"
+                             style="-fx-background-color: #f8f9fa; -fx-font-weight: bold;" />
+            </columns>
+        </TableView>
+    </VBox>
+    
+    <!-- Bottom Navigation -->
+    <HBox alignment="CENTER" spacing="15" style="-fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 10px; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5,0,0,1);">
+        <Button fx:id="backButton" text="← Back to Dashboard" onAction="#onBackClick"
+                style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-background-radius: 8px; -fx-padding: 10 20; -fx-font-weight: bold;" />
+    </HBox>
+    
+</VBox>

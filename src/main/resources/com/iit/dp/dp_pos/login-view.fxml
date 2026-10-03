@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane style="-fx-background-color: #FFFDE7;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iit.dp.dp_pos.controller.AuthController"> <!-- light cream -->
+    <VBox alignment="CENTER" spacing="24.0" style="-fx-background-color: rgba(255,255,255,0.97); -fx-background-radius: 18px; -fx-padding: 48 48 48 48; -fx-effect: dropshadow(gaussian, rgba(25,118,210,0.10), 24,0,0,8); -fx-min-width: 370px; -fx-max-width: 420px; -fx-min-height: 370px; -fx-max-height: 440px;">
+        <!-- Logo Placeholder -->
+        <StackPane style="-fx-background-color: #1976d2; -fx-background-radius: 50%; -fx-min-width: 64px; -fx-min-height: 64px; -fx-max-width: 64px; -fx-max-height: 64px; -fx-alignment: center;" visible="false">
+            <Label prefHeight="30.0" prefWidth="0.0" style="-fx-text-fill: white; -fx-font-size: 26px; -fx-font-weight: bold;" />
+        </StackPane>
+        <Label fx:id="loginMessageLabel" prefHeight="62.0" prefWidth="325.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #5D4037; -fx-padding: 0 0 12 0;" text="your email id and password" />
+        <VBox alignment="CENTER" spacing="14.0">
+            <TextField fx:id="emailField" promptText="Email" style="-fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #bdbdbd; -fx-background-color: #f7faff; -fx-padding: 10 14 10 14; -fx-font-size: 16px; -fx-effect: dropshadow(gaussian, rgba(25,118,210,0.04), 2,0,0,1); -fx-text-fill: #5D4037;" />
+            <PasswordField fx:id="passwordField" promptText="Password" style="-fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #bdbdbd; -fx-background-color: #f7faff; -fx-padding: 10 14 10 14; -fx-font-size: 16px; -fx-effect: dropshadow(gaussian, rgba(25,118,210,0.04), 2,0,0,1); -fx-text-fill: #5D4037;" />
+        </VBox>
+        <Button onAction="#login" style="-fx-background-color: linear-gradient(to right, #FFEB3B, #FFF176); -fx-text-fill: #5D4037; -fx-font-size: 22px; -fx-font-weight: 800; -fx-background-radius: 14px; -fx-padding: 18 56 18 56; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(255,235,59,0.18), 8,0,0,2); -fx-border-color: transparent; -fx-border-radius: 14px; -fx-letter-spacing: 1px;" text="Login" />
+    </VBox>
+</StackPane>

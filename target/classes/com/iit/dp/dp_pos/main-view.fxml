@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.iit.dp.dp_pos.controller.MainController"
+            style="-fx-background-color: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);">
+    
+    <!-- Top Navigation Bar -->
+    <top>
+        <HBox style="-fx-background-color: rgba(255,255,255,0.95); -fx-padding: 10 20 10 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4,0,0,2);" 
+              alignment="CENTER_LEFT" spacing="20">
+            <Label fx:id="titleLabel" text="Supershop POS System" 
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1976d2;" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="userInfoLabel" text="Welcome" 
+                   style="-fx-font-size: 14px; -fx-text-fill: #666;" />
+            <Button fx:id="logoutButton" text="Logout" onAction="#onLogoutClick"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 5px; -fx-padding: 8 16;" />
+        </HBox>
+    </top>
+    
+    <!-- Main Content Area -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 20;">
+            <!-- Content will be dynamically loaded here -->
+        </StackPane>
+    </center>
+    
+</BorderPane> 
